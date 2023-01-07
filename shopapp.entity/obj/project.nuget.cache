@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "eaRvdno08WaCxHTtfqxi3FnRzBCS4iQpi5lhogohSJ3CSMLR+QWpLNnZFDaaZ6p97VOYFGzO5j17Gz4Z2yx2fg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Emre\\Desktop\\bitirme\\shopapp.entity\\shopapp.entity.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Emre\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Emre\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Emre\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
