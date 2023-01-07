@@ -1,0 +1,31 @@
+@model Admin
+@{
+    Layout = "_Layout3";
+}
+<h1>Admin Ekle</h1>
+<hr>
+<div class="row">
+    <form method="POST">
+        <div class="form-group">
+            <label for="AdminID">ID Giriniz</label>
+            <input type="text" asp-for="AdminID" class="form-control">
+            <span asp-validation-for="AdminID" class="text-danger"></span>  
+        </div>
+        <div class="form-group">
+            <label for="name">Isim</label>
+            <input type="text" asp-for="name" class="form-control">
+            <span asp-validation-for="name" class="text-danger"></span>  
+        </div>
+        <div class="form-group">
+            <label for="surName">Soyisim</label>
+            <input type="text" asp-for="surName" class="form-control">
+            <span asp-validation-for="surName" class="text-danger"></span>  
+        </div>
+        <div class="form-group">
+            <label for="password">Sifre</label>
+            <input type="text" asp-for="password" class="form-control">
+            <span asp-validation-for="password" class="text-danger"></span>  
+        </div>
+        <button type="submit" class="btn btn-primary">Ekle</button>
+    </form>
+</div>

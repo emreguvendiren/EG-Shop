@@ -1,0 +1,90 @@
+@model OrderModel
+<h1>Checkout</h1>
+<hr>
+<div class="row">
+    <div class="col-md-8">
+        <h4 class="mb-3">Siparis Detayi</h4>
+        <form method="POST" asp-controller="Cart" asp-action="Checkout">
+            <input type="hidden" name="cartId" value="0">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label asp-for="@Model.FirstName">Adi</label>
+                    <input asp-for="@Model.FirstName" class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="@Model.LastName">SoyAdi</label>
+                    <input asp-for="@Model.LastName" class="form-control">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.Adress">Adres</label>
+                <textarea asp-for="@Model.Adress" class="form-control"></textarea>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label asp-for="@Model.Ctiy">Sehir</label>
+                    <input asp-for="@Model.Ctiy" class="form-control">
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="@Model.Phone">Telefon</label>
+                    <input asp-for="@Model.Phone" class="form-control">
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="@Model.Email">Email</label>
+                    <input asp-for="@Model.Email" class="form-control">
+                </div>
+            </div>
+            <h4 class="mb-3">Odeme Detayi</h4>
+            <hr class="mb-3">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label asp-for="@Model.CardName">Kart Ismi</label>
+                    <input asp-for="@Model.CardName" class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="@Model.CardNumber">Kart Numarasi</label>
+                    <input asp-for="@Model.CardNumber" class="form-control">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label asp-for="@Model.ExpMonth">Ay</label>
+                    <input asp-for="@Model.ExpMonth" class="form-control">
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="@Model.ExpYear">Yil</label>
+                    <input asp-for="@Model.ExpYear" class="form-control">
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="@Model.Cvc">Cvc</label>
+                    <input asp-for="@Model.Cvc" class="form-control">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Devam</button>
+        </form>
+    </div>
+    <div class="col-md-4">
+        <h4 class="mb-4">
+            <span>Siparis Ozeti</span>
+        </h4>
+            <ul class="list-group mb-3">
+
+                @foreach (var item in Model.SepetModel.SepetItems)
+                {
+                    <li class="list-group-item d-flex justify-content-between">
+                    <div>
+                        <h6>@item.Name</h6>
+                        <small class="text-muted">Adet : @item.Quantity</small>
+                    </div>
+                    <span class="text-muted">@item.Price.ToString() TL</span>
+                </li>
+                }
+                               
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>Toplam </span>
+                    <strong class="text-muted">@Model.SepetModel.TotalPrice().ToString() TL</strong>
+                </li>
+            </ul>
+        
+    </div>
+</div>

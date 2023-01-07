@@ -1,0 +1,19 @@
+
+@if (ViewBag.gecersiz==1)
+{
+    <div class="text-danger display-4">
+        <h1>Gecersiz Token</h1>
+        </div>
+}
+@if (ViewBag.Bulunamadi==1)
+{
+    <div class="text-danger">
+            <h1>Boyle bir kullanici bulunamadi.</h1>
+        </div>
+}
+@if (ViewBag.success==1)
+{
+    <div class="text-success">
+            <h1>Hesabiniz basariyla onaylandi.</h1>
+        </div>
+}

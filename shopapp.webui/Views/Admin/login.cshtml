@@ -1,0 +1,62 @@
+@model Admin
+@{
+    Layout = "";    
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+	<title>Admin Giris Sayfasi</title>
+    <link rel="icon" href="~/img/logo.png" type="image/x-icon"> 
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+    <link rel="stylesheet" href="/modules/bootstrap/dist/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/login.css">
+</head>
+<body>
+
+<form method="POST">
+    <section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+
+            <div class="mb-md-5 mt-md-4 pb-5">
+              <img src="~/img/logo.png" alt="" width="100" height="100" class="botxx">  
+              <h2 class="fw-bold mb-2 text-uppercase">MERHABA!</h2>
+              <p class="text-white-50 mb-5"></p>
+
+              <div class="form-outline form-white mb-4">
+                <label for="AdminID" class="form-label" for="typeEmailX">Admin Numarasi</label>
+                <input asp-for="AdminID" type="text" id="typeEmailX" class="form-control form-control-lg" />
+                @* <span asp-validation-for="AdminID" class="text-danger"></span> *@
+                
+                
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <label for="password" class="form-label" for="typePasswordX">Sifre</label>
+                <input asp-for="password" type="password" id="typePasswordX" class="form-control form-control-lg" />
+                @* <span asp-validation-for="password" class="text-danger"></span>  *@
+                @if (ViewBag.LoginControl==0)
+                {
+                  <span class="text-danger mt-2 deneme" style="margin-top: 10px;">Kullanici Adi Veya Sifre Yanlis</span> 
+                }   
+              </div>
+
+              <button class="btn btn-outline-light btn-lg px-5" type="submit">Giris</button>
+              <button class="btn btn-outline-light btn-lg px-5" type="submit" asp-controller="shop" asp-action="list">Geri</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</form>
+
+</body>
+</html>
